@@ -55,8 +55,24 @@
     <div id="overlay"></div>
     <div id="carrinho" class="carrinho">
       <h3>Meu carrinho</h3>
-      <div id="alerta"></div>
-      <div id="itens-carrinho"></div>
+      <div id="alerta" class="alerta">
+        <img src="src/image/alert.png" alt="" />
+        <span>Carrinho vazio</span>
+      </div>
+      <div id="itens-carrinho">
+        <div class="produtos-carrinho">
+          <img
+            src="src/image/burguer.svg"
+            alt="Burguer Duplo"
+            title="Burguer Duplo"
+          />
+          <div class="produtos-carrinho-text">
+            <h2>Burguer Duplo</h2>
+            <p>Itens: <span id="quantidade-itens-carrinho">1</span></p>
+          </div>
+          <button id="remover"><i class="bi bi-trash"></i></button>
+        </div>
+      </div>
       <div class="info-carrinho">
         <p>
           Total: <span class="cifrao">R$</span> <span id="total">29,90</span>
