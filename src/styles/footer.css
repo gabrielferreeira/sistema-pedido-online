@@ -1,0 +1,49 @@
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: var(--color-green);
+  border-radius: 0.6rem 0.6rem 0 0;
+}
+
+footer button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: transparent;
+  color: var(--color-primary);
+  width: 100%;
+  cursor: pointer;
+}
+
+footer button p {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+footer button i {
+  font-size: 2.5rem;
+}
+
+footer button p span {
+  position: absolute;
+  top: -5px;
+  right: -7px;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-primary);
+  color: var(--color-primary);
+  font-size: 1.3rem;
+  font-weight: 700;
+}

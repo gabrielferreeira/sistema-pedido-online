@@ -1,0 +1,62 @@
+main {
+  padding: 2rem 0 6rem 0;
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+section {
+  margin-top: 2.5rem;
+}
+
+section:first-child {
+  margin: 0;
+}
+
+.grid-item {
+  background-color: var(--color-second);
+  box-shadow: var(--shadow);
+  border-radius: 0.6rem;
+  padding: 0.6rem;
+}
+
+.grid-item img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.grid-item h3 {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.grid-item p {
+  text-align: center;
+  margin-top: 0.6rem;
+  font-weight: 400;
+  color: var(--color-primary);
+}
+
+.grid-item .flex button {
+  background-color: var(--bg-second);
+  color: var(--color-second);
+  padding: 0.4rem 1rem;
+  border-radius: 0.6rem;
+  cursor: pointer;
+}
+
+.grid-item .flex button i {
+  font-size: 1.7rem;
+}
+
+.grid-item .flex p {
+  font-weight: 400;
+  color: var(--color-primary);
+}
