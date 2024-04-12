@@ -68,7 +68,7 @@ function formatarPreco(preco) {
 const produtosContainer = document.getElementById("produtos-conteiner");
 
 // Itera sobre o array de produtos
-produtos.forEach((categoria) => {
+produtos.forEach((categoria, categoriasIndex) => {
   // Cria um novo elemento de seção para a categoria
   const section = document.createElement("section");
   section.id = categoria.title.toLowerCase();
@@ -79,7 +79,7 @@ produtos.forEach((categoria) => {
         <!-- Itera sobre os itens da categoria -->
         ${categoria.itens
           .map(
-            (item) => `
+            (item, itemIndex) => `
           <div class="grid-item">
             <img src="${item.img}" alt="${item.textoAlternativo}" title="${
               item.titleImagem
@@ -87,7 +87,7 @@ produtos.forEach((categoria) => {
             <h3>${item.nome}</h3>
             <p>${item.descricao}</p>
             <div class="flex">
-              <button class="add-product-cart">
+              <button class="add-product-cart" data-product-index="${categoriasIndex}" data-item-index="${itemIndex}">
                 <i class="bi bi-cart2"></i>
               </button>
               <p>R$ <span id="price">${formatarPreco(item.preco)}</span></p>
