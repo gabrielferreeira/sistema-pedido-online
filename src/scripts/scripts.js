@@ -76,8 +76,29 @@ document.addEventListener("DOMContentLoaded", function () {
       produtoNovo
         .querySelector(".remover")
         .addEventListener("click", () =>
-          removerProdutosDoCarrinho(produtoNovo, produto.preco)
+          removerProdutosDoCarrinho(produto.nome, produto.preco)
         );
+    }
+
+    atualizarTotalCarrinho();
+  }
+
+  function removerProdutosDoCarrinho(produtoNome, precoProduto) {
+    totalCarrinho -= precoProduto * carrinhoItems[produtoNome].quantidade;
+
+    carrinhoItems[produtoNome].quantidade--;
+
+    // Se a quantidade do produto no carrinho for 0, remove o produto do carrinho
+    if (carrinhoItems[produtoNome].quantidade === 0) {
+      delete carrinhoItems[produtoNome];
+      document
+        .querySelector(`#carrinho [data-produto="${produtoNome}"]`)
+        .remove();
+    } else {
+      // Atualiza a quantidade do produto no HTML
+      document.querySelector(
+        `#carrinho [data-produto="${produtoNome}"] .quantidade-produto`
+      ).textContent = carrinhoItems[produtoNome].quantidade;
     }
 
     atualizarTotalCarrinho();
