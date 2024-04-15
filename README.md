@@ -16,4 +16,15 @@ O pede foood é um sistema de pedidos online, nele você pode escolher seus prod
 <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="javascript" align="center">
 </div></br>
 
+## Funcionalidades do sistema
+
+- Adicionar produtos ao carrinho
+- Remover produtos do carrinho
+- Buscar por um produto
+- Verificar se o estabelecimento está aberto ou fechado
+- Verificar se o carrinho está vazio, se sim, aplicar a mensagem de carrinho vazio
+- Mostrar a quantidade de produtos existentes no carrinho
+- Aplicar a propriedade **disable** no input e no botão de finalizar compra, caso, o carrinho esteja vazio
+- Finalizar a compra através do **whatsapp**, usando a api do próprio whatsapp
+
 <a href="#">Clique aqui para ver o projeto</a> ⬅
