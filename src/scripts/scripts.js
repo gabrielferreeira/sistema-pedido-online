@@ -112,6 +112,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const totalElement = document.getElementById("total");
     const totalFormatado = totalCarrinho.toFixed(2).replace(".", ",");
     totalElement.textContent = totalFormatado;
+
+    atualizarQuantidadeProdutosCarrinho();
   }
 
   function validarCarrinhoVazio() {
@@ -127,5 +129,21 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  function atualizarQuantidadeProdutosCarrinho() {
+    const quantidadeProdutosCarrinhoSpan = document.getElementById(
+      "quantidade-produtos-carrinho"
+    );
+    let totalProdutos = 0;
+
+    // Percorre os itens no carrinho e soma suas quantidades
+    for (const produto in carrinhoItems) {
+      totalProdutos += carrinhoItems[produto].quantidade;
+    }
+
+    // Atualiza o texto do span com a quantidade total de produtos no carrinho
+    quantidadeProdutosCarrinhoSpan.textContent = totalProdutos;
+  }
+
+  atualizarQuantidadeProdutosCarrinho();
   validarCarrinhoVazio();
 });
