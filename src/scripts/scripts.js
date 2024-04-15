@@ -81,6 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     atualizarTotalCarrinho();
+    validarCarrinhoVazio();
   }
 
   function removerProdutosDoCarrinho(produtoNome, precoProduto) {
@@ -102,6 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     atualizarTotalCarrinho();
+    validarCarrinhoVazio();
   }
 
   function atualizarTotalCarrinho() {
@@ -109,4 +111,19 @@ document.addEventListener("DOMContentLoaded", function () {
     const totalFormatado = totalCarrinho.toFixed(2).replace(".", ",");
     totalElement.textContent = totalFormatado;
   }
+
+  function validarCarrinhoVazio() {
+    const alertaCarrinho = document.getElementById("alerta");
+    const itensCarrinho = document.getElementById("itens-carrinho");
+
+    if (Object.keys(carrinhoItems).length === 0) {
+      alertaCarrinho.style.display = "flex";
+      itensCarrinho.style.display = "none";
+    } else {
+      alertaCarrinho.style.display = "none";
+      itensCarrinho.style.display = "block";
+    }
+  }
+
+  validarCarrinhoVazio();
 });
