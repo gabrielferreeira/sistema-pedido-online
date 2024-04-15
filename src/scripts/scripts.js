@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const itensCarrinho = document.getElementById("itens-carrinho");
   const botaoAdicionarItens = document.querySelectorAll(".add-product-cart");
   let totalCarrinho = 0;
+  const carrinhoItems = {};
 
   botaoAdicionarItens.forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -41,9 +42,25 @@ document.addEventListener("DOMContentLoaded", function () {
     const produto = produtos[productIndex].itens[itemIndex];
     totalCarrinho += produto.preco;
 
-    const produtoNovo = document.createElement("div");
-    produtoNovo.classList.add("produtos-carrinho");
-    produtoNovo.innerHTML = `
+    // Verifica se o produto já está no carrinho
+    if (carrinhoItems[produto.nome]) {
+      carrinhoItems[produto.nome].quantidade++;
+      // Atualiza a quantidade do produto no HTML
+      document.querySelector(
+        `#carrinho [data-produto="${produto.nome}"] .quantidade-produto`
+      ).textContent = carrinhoItems[produto.nome].quantidade;
+    } else {
+      // Adiciona o produto ao carrinho
+      carrinhoItems[produto.nome] = {
+        preco: produto.preco,
+        quantidade: 1,
+      };
+
+      // Adiciona o produto ao HTML
+      const produtoNovo = document.createElement("div");
+      produtoNovo.classList.add("produtos-carrinho");
+      produtoNovo.setAttribute("data-produto", produto.nome); // Adiciona um atributo para identificar o produto
+      produtoNovo.innerHTML = `
             <img
               src="${produto.img}"
               alt="${produto.textoAlternativo}"
@@ -51,24 +68,18 @@ document.addEventListener("DOMContentLoaded", function () {
             />
             <div class="produtos-carrinho-text">
               <h2>${produto.nome}</h2>
-              <p>Itens: <span id="quantidade-itens-carrinho"></span></p>
+              <p>Itens: <span class="quantidade-produto">1</span></p>
             </div>
             <button class="remover"><i class="bi bi-trash"></i></button>
       `;
-    itensCarrinho.appendChild(produtoNovo);
-    produtoNovo
-      .querySelector(".remover")
-      .addEventListener("click", () =>
-        removerProdutosDoCarrinho(produtoNovo, produto.preco)
-      );
+      itensCarrinho.appendChild(produtoNovo);
+      produtoNovo
+        .querySelector(".remover")
+        .addEventListener("click", () =>
+          removerProdutosDoCarrinho(produtoNovo, produto.preco)
+        );
+    }
 
-    atualizarTotalCarrinho();
-  }
-
-  function removerProdutosDoCarrinho(produtoNovo, precoProduto) {
-    totalCarrinho -= precoProduto;
-
-    produtoNovo.remove();
     atualizarTotalCarrinho();
   }
 
