@@ -102,6 +102,8 @@ document.addEventListener("DOMContentLoaded", function () {
       ).textContent = carrinhoItems[produtoNome].quantidade;
     }
 
+    totalCarrinho = Math.max(totalCarrinho, 0);
+
     atualizarTotalCarrinho();
     validarCarrinhoVazio();
   }
