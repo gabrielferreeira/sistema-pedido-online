@@ -11,6 +11,36 @@ let produtos = [
           "Pão brioche, 2 blands 90g, alface, tomate, bacon e molho da casa.",
         preco: 29.9,
       },
+
+      {
+        img: "src/image/classico.svg",
+        textoAlternativo: "Hambúrguer Clássico",
+        titleImagem: "Hambúrguer Clássico",
+        nome: "Hambúrguer Clássico",
+        descricao:
+          "Pão brioche, 1 blands 100g, alface, tomate, queijo cheddar e molho da casa.",
+        preco: 16.9,
+      },
+
+      {
+        img: "src/image/classico-gourmet.svg",
+        textoAlternativo: "Hambúrguer Clássico Gourmet",
+        titleImagem: "Hambúrguer Clássico Gourmet",
+        nome: "Hambúrguer Clássico Gourmet",
+        descricao:
+          "Pão brioche, bland 100g, alface crespa, cebola roxa, ovo gema mole e molho da casa.",
+        preco: 19.9,
+      },
+
+      {
+        img: "src/image/combo-chicken.svg",
+        textoAlternativo: "Combo Clássico",
+        titleImagem: "Combo Clássico",
+        nome: "Combo Clássico",
+        descricao:
+          "Pão com gergilim, chicken 100g, alface, tomate, molho da casa e fritas",
+        preco: 17.9,
+      },
     ],
   },
 
