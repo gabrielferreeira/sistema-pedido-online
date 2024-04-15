@@ -8,7 +8,7 @@ let produtos = [
         titleImagem: "Burguer Duplo",
         nome: "Burguer Duplo",
         descricao:
-          "Pão brioche, 2 blands 90g, alface, tomate, bacon e molho da casa.",
+          "Pão brioche, 2 blands 90g, alface, tomate, farofa de bacon e molho da casa.",
         preco: 29.9,
       },
 
@@ -24,9 +24,9 @@ let produtos = [
 
       {
         img: "src/image/classico-gourmet.svg",
-        textoAlternativo: "Hambúrguer Clássico Gourmet",
-        titleImagem: "Hambúrguer Clássico Gourmet",
-        nome: "Hambúrguer Clássico Gourmet",
+        textoAlternativo: "Clássico Gourmet",
+        titleImagem: "Clássico Gourmet",
+        nome: "Clássico Gourmet",
         descricao:
           "Pão brioche, bland 100g, alface crespa, cebola roxa, ovo gema mole e molho da casa.",
         preco: 19.9,
@@ -38,7 +38,7 @@ let produtos = [
         titleImagem: "Combo Clássico",
         nome: "Combo Clássico",
         descricao:
-          "Pão com gergilim, chicken 100g, alface, tomate, molho da casa e fritas",
+          "Pão com gergilim, chicken 100g, alface, tomate, molho da casa e batata frita",
         preco: 17.9,
       },
     ],

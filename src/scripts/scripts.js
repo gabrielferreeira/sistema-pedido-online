@@ -87,20 +87,13 @@ document.addEventListener("DOMContentLoaded", function () {
   function removerProdutosDoCarrinho(produtoNome, precoProduto) {
     totalCarrinho -= precoProduto * carrinhoItems[produtoNome].quantidade;
 
-    carrinhoItems[produtoNome].quantidade--;
+    // Remover todos os itens do mesmo tipo
+    delete carrinhoItems[produtoNome];
 
-    // Se a quantidade do produto no carrinho for 0, remove o produto do carrinho
-    if (carrinhoItems[produtoNome].quantidade === 0) {
-      delete carrinhoItems[produtoNome];
-      document
-        .querySelector(`#carrinho [data-produto="${produtoNome}"]`)
-        .remove();
-    } else {
-      // Atualiza a quantidade do produto no HTML
-      document.querySelector(
-        `#carrinho [data-produto="${produtoNome}"] .quantidade-produto`
-      ).textContent = carrinhoItems[produtoNome].quantidade;
-    }
+    // Remover o elemento HTML correspondente
+    document
+      .querySelectorAll(`#carrinho [data-produto="${produtoNome}"]`)
+      .forEach((element) => element.remove());
 
     totalCarrinho = Math.max(totalCarrinho, 0);
 
