@@ -56,6 +56,36 @@ let produtos = [
           "Massa caseira, calabresa defumada, queijo, cebola e orégano.",
         preco: 19.9,
       },
+
+      {
+        img: "src/image/pizza-mista.svg",
+        textoAlternativo: "Pizza Mista",
+        titleImagem: "Pizza Mista",
+        nome: "Pizza Mista",
+        descricao:
+          "Massa caseira, queijo mussarela, presunto, azeitona e orégano.",
+        preco: 17.9,
+      },
+
+      {
+        img: "src/image/pizza-mussarela.svg",
+        textoAlternativo: "Pizza de Mussarela",
+        titleImagem: "Pizza de Mussarela",
+        nome: "Pizza de Mussarela",
+        descricao:
+          "Massa caseira, queijo mussarela, tomate, azeitona e orégano.",
+        preco: 21.9,
+      },
+
+      {
+        img: "src/image/pizza-peperoni.svg",
+        textoAlternativo: "Pizza de Peperoni",
+        titleImagem: "Pizza de Peperoni",
+        nome: "Pizza de Peperoni",
+        descricao:
+          "Massa caseira, queijo mussarela, salame italiano, pimentão e orégano.",
+        preco: 20.9,
+      },
     ],
   },
 
@@ -77,13 +107,41 @@ let produtos = [
     title: "Bebidas",
     itens: [
       {
-        img: "src/image/drink.svg",
-        textoAlternativo: "Drink",
-        titleImagem: "Drink",
-        nome: "Drink",
+        img: "src/image/refrigerantes.svg",
+        textoAlternativo: "Refrigerantes",
+        titleImagem: "Refrigerantes",
+        nome: "Refrigerantes",
         descricao:
-          "Gin tanqueray, suco de limão siciliano, syrup e anguostura bitters.",
+          "Temos todos os saberes de refrigerantes, com ou sem açucar.",
+        preco: 6.9,
+      },
+
+      {
+        img: "src/image/laranja.svg",
+        textoAlternativo: "Suco de Laranja",
+        titleImagem: "Suco de Laranja",
+        nome: "Suco de Laranja",
+        descricao:
+          "Laranja bahia, raspas de laranja, açúcar ou adoçante e caldo de limão.",
+        preco: 6.9,
+      },
+
+      {
+        img: "src/image/drinks.svg",
+        textoAlternativo: "Drinks",
+        titleImagem: "Drinks",
+        nome: "Drinks",
+        descricao: "temos todos os sabores de drinks, com ou sem álcool.",
         preco: 14.9,
+      },
+
+      {
+        img: "src/image/cervejas.svg",
+        textoAlternativo: "Cervejas",
+        titleImagem: "Cervejas",
+        nome: "Cervejas",
+        descricao: "Temos todos os tipos de cervejas, com ou sem álcool.",
+        preco: 12.9,
       },
     ],
   },
