@@ -85,6 +85,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     atualizarTotalCarrinho();
+
+    calcularTotalCarrinho();
     validarCarrinhoVazio();
   }
 
@@ -102,11 +104,29 @@ document.addEventListener("DOMContentLoaded", function () {
     totalCarrinho = Math.max(totalCarrinho, 0);
 
     atualizarTotalCarrinho();
+    calcularTotalCarrinho();
     validarCarrinhoVazio();
   }
 
-  function atualizarTotalCarrinho() {
+  function calcularTotalCarrinho() {
+    const subtotal = totalCarrinho.toFixed(2);
+    let frete = 0;
+    if (Object.keys(carrinhoItems).length > 0) {
+      frete = totalCarrinho >= 50 ? 0 : 5;
+    }
+    const total = parseFloat(subtotal) + frete;
+
+    const subtotalElement = document.getElementById("subtotal");
+    const freteElement = document.getElementById("frete");
     const totalElement = document.getElementById("total");
+
+    subtotalElement.textContent = subtotal.replace(".", ",");
+    freteElement.textContent = frete.toFixed(2).replace(".", ",");
+    totalElement.textContent = total.toFixed(2).replace(".", ",");
+  }
+
+  function atualizarTotalCarrinho() {
+    const totalElement = document.getElementById("subtotal");
     const totalFormatado = totalCarrinho.toFixed(2).replace(".", ",");
     totalElement.textContent = totalFormatado;
 
