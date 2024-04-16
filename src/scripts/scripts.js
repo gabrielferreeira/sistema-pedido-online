@@ -7,6 +7,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const botaoAdicionarItens = document.querySelectorAll(".add-product-cart");
   let totalCarrinho = 0;
   const carrinhoItems = {};
+  let data = new Date();
+  let hora = data.getHours();
+  const fechamentoEstabelecimento = document.getElementById("funcionamento");
+  const funcionamentoAlert = document.querySelector("header p");
 
   botaoAdicionarItens.forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -137,6 +141,17 @@ document.addEventListener("DOMContentLoaded", function () {
     quantidadeProdutosCarrinhoSpan.textContent = totalProdutos;
   }
 
+  function horarioDeFuncionamneto() {
+    if (hora >= 7 && hora < 17) {
+      fechamentoEstabelecimento.textContent = "aberto";
+      funcionamentoAlert.style.background = "var(--color-green)";
+    } else {
+      fechamentoEstabelecimento.textContent = "fechado";
+      funcionamentoAlert.style.background = "var(--color-red)";
+    }
+  }
+
   atualizarQuantidadeProdutosCarrinho();
   validarCarrinhoVazio();
+  horarioDeFuncionamneto();
 });
