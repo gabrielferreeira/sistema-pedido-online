@@ -100,6 +100,15 @@ let produtos = [
         descricao: "Frango desfiado, requeijão cremoso, milho e azeitona.",
         preco: 11.9,
       },
+
+      {
+        img: "src/image/pastel-carne.svg",
+        textoAlternativo: "Pastel de Carne",
+        titleImagem: "Pastel de Carne",
+        nome: "Paste de Carne",
+        descricao: "Carne de patinho moída, bacon, milho, ervilha e azeitona.",
+        preco: 9.9,
+      },
     ],
   },
 
