@@ -32,7 +32,7 @@
   animation: progress 3s linear forwards;
 }
 
-.menssagem:last-child {
+.menssagem-removido {
   display: none;
   background-color: var(--color-red);
 }
