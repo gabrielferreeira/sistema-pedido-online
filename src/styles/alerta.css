@@ -1,0 +1,73 @@
+.alerta-menssagem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: fixed;
+  right: 2rem;
+  top: 2rem;
+  z-index: 9999;
+}
+
+.menssagem {
+  display: none;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  position: relative;
+  background-color: var(--color-green);
+  padding: 1rem;
+  border-radius: 0.6rem;
+  overflow: hidden;
+  animation: entrance 0.3s ease forwards;
+}
+
+.menssagem::before {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0.4rem;
+  background-color: var(--bg-second);
+  animation: progress 3s linear forwards;
+}
+
+.menssagem:last-child {
+  display: none;
+  background-color: var(--color-red);
+}
+
+.menssagem i,
+.texto-alerta p,
+.texto-alerta span {
+  color: var(--color-primary);
+}
+
+.texto-alerta {
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes entrance {
+  0% {
+    transform: translateX(100%);
+  }
+
+  40% {
+    transform: translateX(-5%);
+  }
+
+  80% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-10%);
+  }
+}
+
+@keyframes progress {
+  100% {
+    width: 100%;
+  }
+}

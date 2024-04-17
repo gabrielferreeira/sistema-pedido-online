@@ -17,6 +17,10 @@ document.addEventListener("DOMContentLoaded", function () {
       const productIndex = btn.getAttribute("data-product-index");
       const itemIndex = btn.getAttribute("data-item-index");
       adicionarAoCarrinho(productIndex, itemIndex);
+      exibirMenssagem(
+        "adicionado",
+        produtos[productIndex].itens[itemIndex].nome
+      );
     });
   });
 
@@ -106,6 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
     atualizarTotalCarrinho();
     calcularTotalCarrinho();
     validarCarrinhoVazio();
+    exibirMenssagem("removido", produtoNome);
   }
 
   function calcularTotalCarrinho() {
@@ -138,8 +143,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const itensCarrinho = document.getElementById("itens-carrinho");
     const localizacao = document.getElementById("localizacao");
     const botaoFinalizarCompra = document.getElementById("finalizar");
-
-    // console.log(inputSearch, botaoFinalizarCompra);
 
     if (Object.keys(carrinhoItems).length === 0) {
       alertaCarrinho.style.display = "flex";
@@ -189,6 +192,16 @@ document.addEventListener("DOMContentLoaded", function () {
       fechamentoEstabelecimento.textContent = "fechado";
       funcionamentoAlert.style.background = "var(--color-red)";
     }
+  }
+
+  function exibirMenssagem(tipo, nomeProduto) {
+    const messagem = document.getElementById(tipo);
+    messagem.querySelector(".texto-alerta p").textContent = nomeProduto;
+    messagem.style.display = "flex";
+
+    setTimeout(() => {
+      messagem.style.display = "none";
+    }, 3000);
   }
 
   atualizarQuantidadeProdutosCarrinho();
