@@ -11,6 +11,42 @@ document.addEventListener("DOMContentLoaded", function () {
   let hora = data.getHours();
   const fechamentoEstabelecimento = document.getElementById("funcionamento");
   const funcionamentoAlert = document.querySelector("header p");
+  const campoDePesquisa = document.getElementById("search");
+
+  function removerAcentos(str) {
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  }
+
+  campoDePesquisa.addEventListener("input", function () {
+    const valorDoCampoDePesquisa = removerAcentos(
+      campoDePesquisa.value.trim().toLowerCase()
+    );
+    const produtosContainer = document.getElementById("produtos-conteiner");
+
+    produtosContainer.querySelectorAll("section").forEach((section) => {
+      const sectionTitle = section.querySelector(".title");
+      let sectionHasVisibleItems = false;
+
+      section.querySelectorAll(".grid-item").forEach((item) => {
+        const nomeProduto = removerAcentos(
+          item.querySelector("h3").textContent.toLocaleLowerCase()
+        );
+
+        if (nomeProduto.includes(valorDoCampoDePesquisa)) {
+          item.style.display = "block";
+          sectionHasVisibleItems = true;
+        } else {
+          item.style.display = "none";
+        }
+      });
+
+      if (sectionHasVisibleItems) {
+        section.style.display = "block";
+      } else {
+        section.style.display = "none";
+      }
+    });
+  });
 
   botaoAdicionarItens.forEach((btn) => {
     btn.addEventListener("click", () => {
